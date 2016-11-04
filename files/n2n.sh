@@ -12,25 +12,6 @@ proto_n2n_setup() {
         local server port server2 port2 mode ipaddr netmask gateway macaddr mtu community key forwarding ip6addr ip6prefixlen ip6gw dynamic localport mgmtport multicast verbose
         json_get_vars server port server2 port2 mode ipaddr netmask gateway macaddr mtu community key forwarding ip6addr ip6prefixlen ip6gw dynamic localport mgmtport multicast verbose
 
-        [ -n "$server" ] && {
-                for ip in $(resolveip -t 5 "$server"); do
-                        ( proto_add_host_dependency "$cfg" "$ip" )
-                        serv_addr=1
-                done
-        }
-        [ -n "$server2" ] && {
-                for ip in $(resolveip -t 5 "$server2"); do
-                        ( proto_add_host_dependency "$cfg" "$ip" )
-                        serv_addr=1
-                done
-        }
-        [ -n "$serv_addr" ] || {
-                echo "Could not resolve server address"
-                sleep 5
-                proto_setup_failed "$cfg"
-                exit 1
-        }
-
         proto_run_command "$cfg" /usr/sbin/edge -f \
                           -d "$device" \
                           -l "${server}:${port}" \
