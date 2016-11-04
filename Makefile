@@ -22,7 +22,7 @@ define Package/n2n/Default
   TITLE:=N2N VPN tunneling daemon(V2)
   URL:=http://www.ntop.org/n2n/
   SUBMENU:=VPN
-  DEPENDS:=+kmod-tun +resolveip
+  DEPENDS:=+kmod-tun +resolveip +libopenssl
 endef
 
 define Package/n2n-edge
