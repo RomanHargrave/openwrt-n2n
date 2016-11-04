@@ -1,6 +1,6 @@
 --- a/edge.c	2015-03-25 00:35:32.375981597 +0000
 +++ b/edge.c	2015-03-27 04:54:56.271981597 +0000
-@@ -1935,6 +1935,7 @@
+@@ -2162,6 +2162,7 @@
      char    ip_mode[N2N_IF_MODE_SIZE]="static";
      char    ip_addr[N2N_NETMASK_STR_SIZE] = "";
      char    netmask[N2N_NETMASK_STR_SIZE]="255.255.255.0";
@@ -8,7 +8,7 @@
      int     mtu = DEFAULT_MTU;
      int     got_s = 0;
  
-@@ -2188,6 +2189,11 @@
+@@ -2436,6 +2436,11 @@
      }
  #endif /* #ifdef N2N_HAVE_DAEMON */
  
