@@ -1,6 +1,5 @@
 # openwrt-n2n
-n2n Mod for MuJJnet project written by [Jason Tse](https://github.com/MuJJus) running on OpenWrt.  
-forked from [original code](https://svn.ntop.org/svn/ntop/trunk/n2n/n2n_v2)
+Fork of MuJJus' openwrt-n2n package that doesn't break compatibility with standard N2N networks
 
 ## Build
 Example for ar71xx and trunk.
