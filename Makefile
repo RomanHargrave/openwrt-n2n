@@ -33,6 +33,14 @@ define Package/n2n-supernode
 $(call Package/n2n/Default)
 endef
 
+define Package/n2n-edge/description
+N2Nv2 client-side support (edge).
+endef
+
+define Package/n2n-supernode/description
+N2Nv2 server-side support (supernode).
+endef
+
 define Build/Compile
 		$(MAKE) -C $(PKG_BUILD_DIR) \
 		$(TARGET_CONFIGURE_OPTS) \
