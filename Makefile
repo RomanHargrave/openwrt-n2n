@@ -19,7 +19,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/n2n/Default
   SECTION:=net
   CATEGORY:=Network
-  TITLE:=N2N VPN tunneling daemon(V2)
+  TITLE:=N2Nv2
   URL:=http://www.ntop.org/n2n/
   SUBMENU:=VPN
   DEPENDS:=+kmod-tun +resolveip +libopenssl
@@ -27,18 +27,20 @@ endef
 
 define Package/n2n-edge
 $(call Package/n2n/Default)
+TITLE+= client (edge)
 endef
 
 define Package/n2n-supernode
 $(call Package/n2n/Default)
+TITLE+= server (supernode)
 endef
 
 define Package/n2n-edge/description
-N2Nv2 client-side support (edge).
+N2Nv2 client (edge).
 endef
 
 define Package/n2n-supernode/description
-N2Nv2 server-side support (supernode).
+N2Nv2 server (supernode).
 endef
 
 define Build/Compile
